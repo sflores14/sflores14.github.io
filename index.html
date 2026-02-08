@@ -20,6 +20,8 @@
     />
     <meta property="og:type" content="website" />
 
+    <link rel="icon" href="assets/images/saul-flores-headshot.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -128,7 +130,7 @@
       .hero {
         position: relative;
         display: grid;
-        grid-template-columns: 320px 1fr;
+        grid-template-columns: 220px 1fr;
         gap: 2.25rem;
         align-items: center;
         padding-top: 2.5rem;
@@ -137,6 +139,7 @@
 
       .hero-media img {
         width: 100%;
+        max-width: 220px;
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         border: 3px solid rgba(255, 210, 0, 0.45);
@@ -262,12 +265,6 @@
         background: var(--bg-muted);
         border-top: 1px solid rgba(0, 0, 0, 0.06);
         border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-      }
-
-      .two-column {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
       }
 
       .card-grid {
@@ -431,9 +428,15 @@
         .hero {
           grid-template-columns: 1fr;
         }
+        .hero-media img {
+          max-width: 180px;
+        }
         .card-grid,
-        .updates-grid,
-        .two-column {
+        .updates-grid {
+          grid-template-columns: 1fr;
+        }
+        .timeline-item,
+        .timeline-item:nth-child(even) {
           grid-template-columns: 1fr;
         }
         .timeline-item,
@@ -462,12 +465,10 @@
       <nav class="nav">
         <a class="logo" href="#top">Saul J. Flores</a>
         <div class="nav-links">
-          <a href="#about">About</a>
           <a href="#education">Education</a>
           <a href="#research">Research</a>
           <a href="#projects">Projects</a>
           <a href="#presentations">Presentations</a>
-          <a href="#leadership">Leadership</a>
           <a href="#cv">CV</a>
           <a href="#contact">Contact</a>
           <a href="#links">Links</a>
@@ -492,10 +493,11 @@
           <h1>Hi, I’m Saul Flores.</h1>
           <p class="hero-summary">
             I’m a Biochemistry PhD candidate at the University of Maryland,
-            College Park (advanced to candidacy in May 2025). My dissertation research
-            focuses on exopolysaccharide pathways in bacterial biofilms, combining structural
-            biology, membrane protein biochemistry, and computation to connect molecular
-            mechanism to emergent biofilm properties.
+            College Park. My dissertation research focuses on exopolysaccharide pathways in
+            bacterial biofilms, combining structural biology, membrane protein biochemistry,
+            and computation to connect molecular mechanism to emergent biofilm properties.
+            I also mentor students through La Familia Peer Mentoring and InspiraSTEM and
+            contribute to science policy initiatives through SNAP and professional societies.
           </p>
 
           <div class="hero-actions">
@@ -511,52 +513,6 @@
         </div>
       </section>
 
-      <section id="about" class="section">
-        <div class="section-header">
-          <h2>About</h2>
-          <p class="section-subtitle">
-            Biochemistry researcher focused on bacterial biofilms, computational modeling, and community mentoring.
-          </p>
-        </div>
-
-        <div class="two-column">
-          <div class="card surface">
-            <details>
-              <summary>Research Focus</summary>
-              <div class="detail-body">
-                <p>
-                  I study membrane-associated enzymes and exopolysaccharide biosynthesis in
-                  <em>E. coli</em> biofilms, building experiments that link structure, regulation,
-                  and phenotypic outcomes.
-                </p>
-                <p class="tag-list">
-                  <span>biofilms</span>
-                  <span>membrane enzymes</span>
-                  <span>structural biology</span>
-                </p>
-              </div>
-            </details>
-          </div>
-
-          <div class="card surface">
-            <details>
-              <summary>Mentoring & Service</summary>
-              <div class="detail-body">
-                <p>
-                  I mentor students through La Familia Peer Mentoring and InspiraSTEM, and I
-                  contribute to science policy initiatives through SNAP and professional societies.
-                </p>
-                <p class="tag-list">
-                  <span>mentoring</span>
-                  <span>science policy</span>
-                  <span>community</span>
-                </p>
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
       <section id="education" class="section muted">
         <div class="section-header">
           <h2>Education</h2>
@@ -566,24 +522,25 @@
         <div class="card-grid">
           <article class="card surface">
             <details>
-              <summary>University of Maryland, College Park</summary>
+              <summary>University of Maryland, College Park · PhD · Aug. 2022 – Present</summary>
               <div class="detail-body">
                 <p>
                   PhD, Biochemistry (In Progress)
                 </p>
                 <p>Advanced to candidacy May 2025</p>
+                <p>Ronald E. McNair Graduate Fellowship · UMD Graduate School Society of Fellows</p>
               </div>
             </details>
           </article>
 
           <article class="card surface">
             <details>
-              <summary>University of Maryland, College Park</summary>
+              <summary>University of Maryland, College Park · B.S. · Aug. 2018 – May 2022</summary>
               <div class="detail-body">
                 <p>
                   B.S., Biochemistry and Biological Sciences
                 </p>
-                <p>Aug. 2018 – May 2022</p>
+                <p>Ronald E. McNair Summer Research Fellowship · Parmar Family Endowed Scholarship</p>
               </div>
             </details>
           </article>
@@ -601,12 +558,11 @@
         <div class="card-grid">
           <article class="card surface">
             <details>
-              <summary>Graduate Research Assistant · UMD</summary>
+              <summary>Graduate Research Assistant · UMD · Aug. 2024 – Present</summary>
               <div class="detail-body">
                 <p>
                   Supervisor: Dr. Myles Poulin · Dept. of Chemistry & Biochemistry
                 </p>
-                <p>Aug. 2024 – Present</p>
                 <p class="tag-list">
                   <span>biofilms</span>
                   <span>structural biology</span>
@@ -618,12 +574,11 @@
 
           <article class="card surface">
             <details>
-              <summary>Graduate Research Assistant · UMD</summary>
+              <summary>Graduate Research Assistant · UMD · Dec. 2022 – Aug. 2024</summary>
               <div class="detail-body">
                 <p>
                   Supervisor: Dr. Yanxin Liu · Dept. of Chemistry & Biochemistry
                 </p>
-                <p>Dec. 2022 – Aug. 2024</p>
                 <p class="tag-list">
                   <span>biophysical chemistry</span>
                   <span>protein biochemistry</span>
@@ -635,12 +590,11 @@
 
           <article class="card surface">
             <details>
-              <summary>Undergraduate Researcher · UMD</summary>
+              <summary>Undergraduate Researcher · UMD · Jan. 2021 – May 2022</summary>
               <div class="detail-body">
                 <p>
                   Supervisor: Dr. Osvaldo Gutierrez · Dept. of Chemistry & Biochemistry
                 </p>
-                <p>Jan. 2021 – May 2022</p>
                 <p class="tag-list">
                   <span>organic chemistry</span>
                   <span>catalysis</span>
@@ -652,12 +606,12 @@
 
           <article class="card surface">
             <details>
-              <summary>Research Intern · NIH</summary>
+              <summary>Research Intern · NIH · Jun. 2018 – Sep. 2019</summary>
               <div class="detail-body">
                 <p>
                   Supervisor: Dr. Avindra Nath · National Institute of Neurological Disorders & Stroke
                 </p>
-                <p>Jun. 2018 – Sep. 2019</p>
+                <p>NIH NINDS Exceptional Summer Intern Award (2019)</p>
                 <p class="tag-list">
                   <span>neuroscience</span>
                   <span>transcriptomics</span>
@@ -679,9 +633,10 @@
           <div class="card surface">
             <div class="timeline-item">
               <details>
-                <summary>Graduate & Undergraduate Teaching Assistant · University of Maryland, College Park</summary>
+                <summary>Graduate & Undergraduate Teaching Assistant · Aug. 2020 – Present</summary>
                 <div class="detail-body">
-                  <p>Aug. 2020 – Present · Courses: BCHM477, CHEM232, BSCI170, BSCI171</p>
+                  <p>University of Maryland, College Park</p>
+                  <p>Courses: BCHM477, CHEM232, BSCI170, BSCI171</p>
                 </div>
               </details>
               <div class="timeline-media hidden">Image</div>
@@ -690,9 +645,10 @@
           <div class="card surface">
             <div class="timeline-item">
               <details>
-                <summary>Graduate Administrative Assistant · University of Maryland, College Park</summary>
+                <summary>Graduate Administrative Assistant · May 2022 – Present</summary>
                 <div class="detail-body">
-                  <p>Program Lead: La Familia Peer Mentoring Program · May 2022 – Present</p>
+                  <p>University of Maryland, College Park</p>
+                  <p>Program Lead: La Familia Peer Mentoring Program</p>
                 </div>
               </details>
               <div class="timeline-media hidden">Image</div>
@@ -701,9 +657,10 @@
           <div class="card surface">
             <div class="timeline-item">
               <details>
-                <summary>Instructor & Mentor · InspiraSTEM (El Salvador)</summary>
+                <summary>Instructor & Mentor · May 2025 – Present</summary>
                 <div class="detail-body">
-                  <p>May 2025 – Present · Workshop: Practical Computational Biochemistry: Macromolecular Modeling & Analysis</p>
+                  <p>InspiraSTEM (El Salvador)</p>
+                  <p>Workshop: Practical Computational Biochemistry: Macromolecular Modeling & Analysis</p>
                 </div>
               </details>
               <div class="timeline-media hidden">Image</div>
@@ -723,9 +680,8 @@
         <div class="updates-grid">
           <article class="update surface">
             <details>
-              <summary>Cloud-Bind</summary>
+              <summary>Cloud-Bind · In Preparation · 2025</summary>
               <div class="detail-body">
-                <p class="update-label">In Preparation</p>
                 <p>
                   Pedebos, C.; da Silva Tarouco, D.; Ligabue-Braun, R.; Flores, S. J.; Arantes, P. Cloud-Bind:
                   A Cloud-Based Platform for Accessible Large-Scale Molecular Docking and Ligand Pose Evaluation.
@@ -736,9 +692,8 @@
 
           <article class="update surface">
             <details>
-              <summary>SNAP Infrastructure</summary>
+              <summary>SNAP Infrastructure · In Preparation · 2025</summary>
               <div class="detail-body">
-                <p class="update-label">In Preparation</p>
                 <p>
                   Di Tomassi, I.; Flores, S. J.; Scales, E.; Rich, A.; Flores, J. P.; Arnett, M.; Boufidis, D.; Davis, B.;
                   Finn, A.; Rader Groves, A.; Patel, D.; Lando, A.; Dant, C. The Scientist Network for Advancing Policy (SNAP):
@@ -760,7 +715,7 @@
           <div class="card surface">
             <div class="timeline-item">
               <details>
-                <summary>Structural and Functional Insights into Nfr-Mediated Polysaccharide Synthesis in <em>E. coli</em> Biofilms</summary>
+                <summary>Structural and Functional Insights into Nfr-Mediated Polysaccharide Synthesis in <em>E. coli</em> Biofilms · 2025–2026</summary>
                 <div class="detail-body">
                   <p>ACS Fall 2025; SACNAS NDiSTEM 2025; InspiraSTEM 2026 (Upcoming)</p>
                 </div>
@@ -771,7 +726,7 @@
           <div class="card surface">
             <div class="timeline-item">
               <details>
-                <summary>C-H Activation in Iron-Catalyzed Ortho Homoallylation of Aromatic Ketones with Methylenecyclopropanes</summary>
+                <summary>C-H Activation in Iron-Catalyzed Ortho Homoallylation of Aromatic Ketones with Methylenecyclopropanes · 2021</summary>
                 <div class="detail-body">
                   <p>McNair Conference 2021; USM LSAMP Research Symposium 2021</p>
                 </div>
@@ -782,7 +737,7 @@
           <div class="card surface">
             <div class="timeline-item">
               <details>
-                <summary>Modulating HERV-K Transcripts Increases Susceptibility to Chemotherapeutic Drugs in AT/RT Cells</summary>
+                <summary>Modulating HERV-K Transcripts Increases Susceptibility to Chemotherapeutic Drugs in AT/RT Cells · 2019</summary>
                 <div class="detail-body">
                   <p>NIH Summer Poster Day 2019</p>
                 </div>
@@ -793,7 +748,7 @@
           <div class="card surface">
             <div class="timeline-item">
               <details>
-                <summary>Ouabain Treatment Reduces HERV-K Transcript Expression via Increased Methylation</summary>
+                <summary>Ouabain Treatment Reduces HERV-K Transcript Expression via Increased Methylation · 2018</summary>
                 <div class="detail-body">
                   <p>NIH Summer Poster Day 2018</p>
                 </div>
@@ -806,135 +761,13 @@
 
       <section id="awards" class="section">
         <div class="section-header">
-          <h2>Awards, Fellowships, & Honors</h2>
-          <p class="section-subtitle">Selected recognitions and competitive awards.</p>
-        </div>
-
-        <div class="contact-card surface">
-          <details>
-            <summary>View awards, fellowships, and honors</summary>
-            <div class="detail-body">
-              <p>
-                SACNAS C.O.L.O.R. Scholar (2025) · ACS Bridge Career Conference Scholar (2025) · Ronald E. McNair Summer
-                Research Fellowship (2025) · ACS Graduate Leaders Scholar (2024) · Ronald E. McNair Graduate Fellowship
-                (2022) · UMD Latine Carolina Rojas-Bahr Award (2022) · Parmar Family Endowed Scholarship (2022) · NIH NINDS
-                Exceptional Summer Intern Award (2019)
-              </p>
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <section id="leadership" class="section muted">
-        <div class="section-header">
-          <h2>Leadership, Mentoring & Public Engagement</h2>
-          <p class="section-subtitle">Community roles, service, and public engagement.</p>
-        </div>
-
-        <div class="timeline">
-          <div class="card surface">
-            <div class="timeline-item">
-              <details>
-                <summary>SNAP Liaison, Science Policy Group (UMD)</summary>
-                <div class="detail-body">
-                  <p>Member (2025 – Present)</p>
-                  <p>SNAP-UMD representative to AAAS Annual Meeting 2026 (Upcoming)</p>
-                </div>
-              </details>
-              <div class="timeline-media hidden">Image</div>
-            </div>
-          </div>
-          <div class="card surface">
-            <div class="timeline-item">
-              <details>
-                <summary>La Familia Peer Mentoring Program (UMD)</summary>
-                <div class="detail-body">
-                  <p>President (2021 – 2022); Treasurer (2020 – 2021); Peer Mentor (2019 – 2020)</p>
-                </div>
-              </details>
-              <div class="timeline-media hidden">Image</div>
-            </div>
-          </div>
-          <div class="card surface">
-            <div class="timeline-item">
-              <details>
-                <summary>SACNAS</summary>
-                <div class="detail-body">
-                  <p>Member (2019 – Present), UMD Chapter Treasurer (2025 – Present)</p>
-                </div>
-              </details>
-              <div class="timeline-media hidden">Image</div>
-            </div>
-          </div>
-          <div class="card surface">
-            <div class="timeline-item">
-              <details>
-                <summary>Terps in Space (SSEP Mission 15b)</summary>
-                <div class="detail-body">
-                  <p>2021 – 2022 · Competition Finalist, Proposal: “Blood Storage for Deep Space Exploration”</p>
-                </div>
-              </details>
-              <div class="timeline-media hidden">Image</div>
-            </div>
-          </div>
-          <div class="card surface">
-            <div class="timeline-item">
-              <details>
-                <summary>American Chemical Society</summary>
-                <div class="detail-body">
-                  <p>Member (2020 – Present), UMD Student Chapter Officer (2020 – 2022)</p>
-                  <p>Chemical Society of Washington Public Affairs Committee (2025 – Present)</p>
-                </div>
-              </details>
-              <div class="timeline-media hidden">Image</div>
-            </div>
-          </div>
-          <div class="card surface">
-            <div class="timeline-item">
-              <details>
-                <summary>ASBMB UMD</summary>
-                <div class="detail-body">
-                  <p>Member (2020 – Present), UMD Chapter Vice President (2020 – 2022)</p>
-                </div>
-              </details>
-              <div class="timeline-media hidden">Image</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="affiliations" class="section">
-        <div class="section-header">
-          <h2>Selected Professional & Academic Affiliations</h2>
-          <p class="section-subtitle">Memberships and ongoing professional involvement.</p>
-        </div>
-
-        <div class="contact-card surface">
-          <details>
-            <summary>View affiliations</summary>
-            <div class="detail-body">
-              <p>
-                American Association for the Advancement of Science (Member, 2025 – Present) · Biophysical Society
-                (Member, 2023 – Present) · UMD Chemistry Graduate Student Organization (Event Planning Committee, 2025 –
-                Present) · Society for the Advancement of Chicanos/Hispanics & Native Americans in Science · American
-                Chemical Society · American Society for Biochemistry and Molecular Biology · Society of Hispanic
-                Professional Engineers (Member, 2020 – Present) · UMD Graduate School Society of Fellows (Member, 2022 –
-                Present)
-              </p>
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <section id="cv" class="section">
-        <div class="section-header">
           <h2>Curriculum Vitae</h2>
           <p class="section-subtitle">Preview my two-page CV (PDF).</p>
         </div>
 
         <div class="cv-card surface">
-          <details open>
-            <summary>Preview CV</summary>
+            <details open>
+              <summary>Preview CV · Updated 2025</summary>
             <div class="cv-preview">
               <object data="assets/Flores_Saul_CV_Draft11%202%20Page.docx.pdf" type="application/pdf">
                 <p>
@@ -964,6 +797,8 @@
             <a href="https://www.linkedin.com/in/saulfloresjr/" target="_blank" rel="noreferrer">LinkedIn</a>
             ·
             <a href="https://bsky.app/profile/florus11.bsky.social" target="_blank" rel="noreferrer">BlueSky</a>
+            ·
+            <span>SNAP · SACNAS · ACS · ASBMB</span>
           </p>
         </div>
       </section>
@@ -976,7 +811,7 @@
 
         <div class="contact-card surface">
           <details>
-            <summary>Open link list</summary>
+            <summary>Open link list · Updated 2025</summary>
             <div class="detail-body">
               <p>Add your favorite links here as you discover them.</p>
             </div>
@@ -992,9 +827,11 @@
       const canvas = document.getElementById("hero-canvas");
       const ctx = canvas.getContext("2d");
       const blobs = [
-        { x: 0.3, y: 0.4, r: 220, dx: 0.0006, dy: 0.0004, hue: 350 },
-        { x: 0.7, y: 0.35, r: 180, dx: -0.0004, dy: 0.0006, hue: 210 },
-        { x: 0.5, y: 0.75, r: 260, dx: 0.0005, dy: -0.0003, hue: 28 },
+        { x: 0.2, y: 0.25, r: 240, dx: 0.0002, dy: 0.00015, hue: 350 },
+        { x: 0.65, y: 0.2, r: 210, dx: -0.00018, dy: 0.0002, hue: 210 },
+        { x: 0.5, y: 0.7, r: 280, dx: 0.00016, dy: -0.00012, hue: 28 },
+        { x: 0.15, y: 0.75, r: 180, dx: 0.00014, dy: -0.0001, hue: 30 },
+        { x: 0.85, y: 0.6, r: 200, dx: -0.00012, dy: 0.00018, hue: 200 },
       ];
       let mouseX = 0.5;
       let mouseY = 0.5;
@@ -1020,8 +857,8 @@
       function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         blobs.forEach((blob) => {
-          blob.x += blob.dx + (mouseX - 0.5) * 0.0003;
-          blob.y += blob.dy + (mouseY - 0.5) * 0.0003;
+          blob.x += blob.dx + (mouseX - 0.5) * 0.00012;
+          blob.y += blob.dy + (mouseY - 0.5) * 0.00012;
           if (blob.x < 0.1 || blob.x > 0.9) blob.dx *= -1;
           if (blob.y < 0.1 || blob.y > 0.9) blob.dy *= -1;
           drawBlob(blob);
