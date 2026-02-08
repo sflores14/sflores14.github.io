@@ -142,24 +142,21 @@
         border: 3px solid rgba(255, 210, 0, 0.45);
       }
 
-      .global-visual {
-        position: fixed;
+      .hero-visual {
+        position: absolute;
         inset: 0;
         pointer-events: none;
         z-index: 0;
       }
 
-      .global-visual canvas {
+      .hero-visual canvas {
         width: 100%;
         height: 100%;
         display: block;
       }
 
-      main,
       .hero-content,
-      .hero-media,
-      .site-header,
-      .site-footer {
+      .hero-media {
         position: relative;
         z-index: 1;
       }
@@ -498,6 +495,9 @@
 
     <main id="top">
       <section class="hero">
+        <div class="hero-visual" aria-hidden="true">
+          <canvas id="hero-canvas"></canvas>
+        </div>
         <div class="hero-media">
           <img
             src="assets/images/saul-flores-headshot.png"
@@ -571,6 +571,30 @@
                 </p>
               </div>
             </details>
+            <h3>Research Focus</h3>
+            <p>
+              I study membrane-associated enzymes and exopolysaccharide biosynthesis in
+              <em>E. coli</em> biofilms, building experiments that link structure, regulation,
+              and phenotypic outcomes.
+            </p>
+            <p class="tag-list">
+              <span>biofilms</span>
+              <span>membrane enzymes</span>
+              <span>structural biology</span>
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Mentoring & Service</h3>
+            <p>
+              I mentor students through La Familia Peer Mentoring and InspiraSTEM, and I
+              contribute to science policy initiatives through SNAP and professional societies.
+            </p>
+            <p class="tag-list">
+              <span>mentoring</span>
+              <span>science policy</span>
+              <span>community</span>
+            </p>
           </div>
         </div>
       </section>
@@ -683,6 +707,84 @@
                 </p>
               </div>
             </details>
+            <h3>University of Maryland, College Park</h3>
+            <p>
+              PhD, Biochemistry (In Progress) · Advanced to candidacy May 2025
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>University of Maryland, College Park</h3>
+            <p>
+              B.S., Biochemistry and Biological Sciences · Aug. 2018 – May 2022
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="research" class="section">
+        <div class="section-header">
+          <h2>Research Experience</h2>
+          <p class="section-subtitle">
+            Graduate and undergraduate research roles across biochemistry and neuroscience.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <h3>Graduate Research Assistant · UMD</h3>
+            <p>
+              Supervisor: Dr. Myles Poulin · Dept. of Chemistry & Biochemistry
+              <br />
+              Aug. 2024 – Present
+            </p>
+            <p class="tag-list">
+              <span>biofilms</span>
+              <span>structural biology</span>
+              <span>membrane enzymes</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Graduate Research Assistant · UMD</h3>
+            <p>
+              Supervisor: Dr. Yanxin Liu · Dept. of Chemistry & Biochemistry
+              <br />
+              Dec. 2022 – Aug. 2024
+            </p>
+            <p class="tag-list">
+              <span>biophysical chemistry</span>
+              <span>protein biochemistry</span>
+              <span>cryo-EM</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Undergraduate Researcher · UMD</h3>
+            <p>
+              Supervisor: Dr. Osvaldo Gutierrez · Dept. of Chemistry & Biochemistry
+              <br />
+              Jan. 2021 – May 2022
+            </p>
+            <p class="tag-list">
+              <span>organic chemistry</span>
+              <span>catalysis</span>
+              <span>mechanism</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Research Intern · NIH</h3>
+            <p>
+              Supervisor: Dr. Avindra Nath · National Institute of Neurological Disorders & Stroke
+              <br />
+              Jun. 2018 – Sep. 2019
+            </p>
+            <p class="tag-list">
+              <span>neuroscience</span>
+              <span>transcriptomics</span>
+              <span>virology</span>
+            </p>
           </article>
         </div>
       </section>
@@ -728,6 +830,23 @@
             </div>
           </div>
         </div>
+        <ul class="list">
+          <li>
+            <strong>Graduate & Undergraduate Teaching Assistant</strong> · University of Maryland, College Park
+            <br />
+            Aug. 2020 – Present · Courses: BCHM477, CHEM232, BSCI170, BSCI171
+          </li>
+          <li>
+            <strong>Graduate Administrative Assistant</strong> · University of Maryland, College Park
+            <br />
+            Program Lead: La Familia Peer Mentoring Program · May 2022 – Present
+          </li>
+          <li>
+            <strong>Instructor & Mentor</strong> · InspiraSTEM (El Salvador)
+            <br />
+            May 2025 – Present · Workshop: Practical Computational Biochemistry: Macromolecular Modeling & Analysis
+          </li>
+        </ul>
       </section>
 
       <section id="projects" class="section">
@@ -764,6 +883,22 @@
                 </p>
               </div>
             </details>
+            <p class="update-label">In Preparation</p>
+            <p>
+              Pedebos, C.; da Silva Tarouco, D.; Ligabue-Braun, R.; Flores, S. J.; Arantes, P. Cloud-Bind:
+              A Cloud-Based Platform for Accessible Large-Scale Molecular Docking and Ligand Pose Evaluation.
+            </p>
+          </article>
+        </div>
+      </section>
+
+          <article class="update">
+            <p class="update-label">In Preparation</p>
+            <p>
+              Di Tomassi, I.; Flores, S. J.; Scales, E.; Rich, A.; Flores, J. P.; Arnett, M.; Boufidis, D.; Davis, B.;
+              Finn, A.; Rader Groves, A.; Patel, D.; Lando, A.; Dant, C. The Scientist Network for Advancing Policy (SNAP):
+              Building Infrastructure for Early-Career Scientists in Policy and Public Engagement.
+            </p>
           </article>
         </div>
       </section>
@@ -819,6 +954,97 @@
               <div class="timeline-media hidden">Image</div>
             </div>
           </div>
+        <ul class="list">
+          <li>
+            <strong>Structural and Functional Insights into Nfr-Mediated Polysaccharide Synthesis in <em>E. coli</em> Biofilms</strong>
+            <br />
+            ACS Fall 2025; SACNAS NDiSTEM 2025; InspiraSTEM 2026 (Upcoming)
+          </li>
+          <li>
+            <strong>C-H Activation in Iron-Catalyzed Ortho Homoallylation of Aromatic Ketones with Methylenecyclopropanes</strong>
+            <br />
+            McNair Conference 2021; USM LSAMP Research Symposium 2021
+          </li>
+          <li>
+            <strong>Modulating HERV-K Transcripts Increases Susceptibility to Chemotherapeutic Drugs in AT/RT Cells</strong>
+            <br />
+            NIH Summer Poster Day 2019
+          </li>
+          <li>
+            <strong>Ouabain Treatment Reduces HERV-K Transcript Expression via Increased Methylation</strong>
+            <br />
+            NIH Summer Poster Day 2018
+          </li>
+        </ul>
+      </section>
+
+      <section id="awards" class="section">
+        <div class="section-header">
+          <h2>Awards, Fellowships, & Honors</h2>
+          <p class="section-subtitle">Selected recognitions and competitive awards.</p>
+        </div>
+
+        <div class="contact-card">
+          <p>
+            SACNAS C.O.L.O.R. Scholar (2025) · ACS Bridge Career Conference Scholar (2025) · Ronald E. McNair Summer
+            Research Fellowship (2025) · ACS Graduate Leaders Scholar (2024) · Ronald E. McNair Graduate Fellowship
+            (2022) · UMD Latine Carolina Rojas-Bahr Award (2022) · Parmar Family Endowed Scholarship (2022) · NIH NINDS
+            Exceptional Summer Intern Award (2019)
+          </p>
+        </div>
+      </section>
+
+      <section id="leadership" class="section muted">
+        <div class="section-header">
+          <h2>Leadership, Mentoring & Public Engagement</h2>
+          <p class="section-subtitle">Community roles, service, and public engagement.</p>
+        </div>
+
+        <ul class="list">
+          <li>
+            <strong>SNAP Liaison, Science Policy Group (UMD)</strong> · Member (2025 – Present)
+            <br />
+            SNAP-UMD representative to AAAS Annual Meeting 2026 (Upcoming)
+          </li>
+          <li>
+            <strong>La Familia Peer Mentoring Program (UMD)</strong>
+            <br />
+            President (2021 – 2022); Treasurer (2020 – 2021); Peer Mentor (2019 – 2020)
+          </li>
+          <li>
+            <strong>SACNAS</strong> · Member (2019 – Present), UMD Chapter Treasurer (2025 – Present)
+          </li>
+          <li>
+            <strong>Terps in Space (SSEP Mission 15b)</strong> · 2021 – 2022
+            <br />
+            Competition Finalist, Proposal: “Blood Storage for Deep Space Exploration”
+          </li>
+          <li>
+            <strong>American Chemical Society</strong> · Member (2020 – Present), UMD Student Chapter Officer (2020 – 2022)
+            <br />
+            Chemical Society of Washington Public Affairs Committee (2025 – Present)
+          </li>
+          <li>
+            <strong>ASBMB UMD</strong> · Member (2020 – Present), UMD Chapter Vice President (2020 – 2022)
+          </li>
+        </ul>
+      </section>
+
+      <section id="affiliations" class="section">
+        <div class="section-header">
+          <h2>Selected Professional & Academic Affiliations</h2>
+          <p class="section-subtitle">Memberships and ongoing professional involvement.</p>
+        </div>
+
+        <div class="contact-card">
+          <p>
+            American Association for the Advancement of Science (Member, 2025 – Present) · Biophysical Society
+            (Member, 2023 – Present) · UMD Chemistry Graduate Student Organization (Event Planning Committee, 2025 –
+            Present) · Society for the Advancement of Chicanos/Hispanics & Native Americans in Science · American
+            Chemical Society · American Society for Biochemistry and Molecular Biology · Society of Hispanic
+            Professional Engineers (Member, 2020 – Present) · UMD Graduate School Society of Fellows (Member, 2022 –
+            Present)
+          </p>
         </div>
       </section>
 
