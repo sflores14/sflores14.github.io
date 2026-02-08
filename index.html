@@ -1,127 +1,272 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Academic Portfolio</title>
+    <title>Stephanie Flores | Academic Portfolio</title>
+    <meta
+      name="description"
+      content="Academic portfolio of Stephanie Flores: research, publications, teaching, and updates."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:wght@400;600&family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <header class="site-header">
-      <div class="container">
-        <div class="brand">
-          <p class="brand-title">Your Name</p>
-          <p class="brand-subtitle">Researcher · Educator · Mentor</p>
-        </div>
-        <nav class="site-nav" aria-label="Primary">
+      <nav class="nav">
+        <a class="logo" href="#top">Stephanie Flores</a>
+        <div class="nav-links">
           <a href="#about">About</a>
           <a href="#research">Research</a>
           <a href="#publications">Publications</a>
           <a href="#teaching">Teaching</a>
+          <a href="#updates">Updates</a>
           <a href="#cv">CV</a>
           <a href="#contact">Contact</a>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </header>
 
-    <main>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-media">
+          <img
+            src="assets/images/headshot-placeholder.svg"
+            alt="Headshot placeholder"
+          />
+          <p class="media-caption">Replace with your headshot PNG.</p>
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow">Researcher · Educator · Communicator</p>
+          <h1>Hi, I’m Stephanie Flores.</h1>
+          <p class="hero-summary">
+            I’m an academic focused on human-centered systems, computational
+            creativity, and the social impact of technology. This page collects
+            my research, publications, and teaching in one place.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#cv">Preview CV</a>
+            <a class="button ghost" href="mailto:hello@example.com">Email</a>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/your-handle" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section id="about" class="section">
-        <div class="container">
-          <h1>About</h1>
+        <div class="section-header">
+          <h2>About</h2>
+          <p class="section-subtitle">
+            Academic profile, research values, and current focus.
+          </p>
+        </div>
+        <div class="section-body two-column">
           <p>
-            This is a short introduction block that summarizes your academic focus, current
-            position, and research interests.
+            I am a researcher who studies how people learn, collaborate, and
+            build with emerging technologies. My work blends quantitative
+            methods with qualitative insights to design tools that are
+            equitable, creative, and empowering.
+          </p>
+          <p>
+            I am currently exploring how AI can augment scientific workflows,
+            with a focus on transparency, ethics, and reproducible systems. I
+            also collaborate on interdisciplinary projects connecting computer
+            science, education, and design.
           </p>
         </div>
       </section>
 
-      <section id="research" class="section section-alt">
-        <div class="container">
-          <h2>Research</h2>
-          <p>
-            Highlight major projects, labs, or grant-funded initiatives. Add one or two sentences
-            on your methodologies and collaborations.
-          </p>
-          <div class="grid">
-            <article>
-              <h3>Project Title One</h3>
-              <p>Brief overview of the problem statement and your contribution.</p>
-            </article>
-            <article>
-              <h3>Project Title Two</h3>
-              <p>Note the impact, partners, or key outcomes.</p>
-            </article>
-          </div>
+      <section id="research" class="section muted">
+        <div class="section-header">
+          <h2>Research Areas</h2>
+          <p class="section-subtitle">Focused themes and ongoing projects.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Human-Centered AI</h3>
+            <p>
+              Designing AI tools that are explainable, inclusive, and aligned
+              with real-world practice.
+            </p>
+            <p class="tag-list">
+              <span>interpretability</span>
+              <span>ethics</span>
+              <span>evaluation</span>
+            </p>
+          </article>
+          <article class="card">
+            <h3>Computational Creativity</h3>
+            <p>
+              Studying how people ideate with algorithms and supporting creative
+              workflows.
+            </p>
+            <p class="tag-list">
+              <span>co-creation</span>
+              <span>design</span>
+              <span>storytelling</span>
+            </p>
+          </article>
+          <article class="card">
+            <h3>Learning Technologies</h3>
+            <p>
+              Building systems that help learners understand complex concepts
+              and develop new literacies.
+            </p>
+            <p class="tag-list">
+              <span>learning analytics</span>
+              <span>HCI</span>
+              <span>equity</span>
+            </p>
+          </article>
         </div>
       </section>
 
       <section id="publications" class="section">
-        <div class="container">
-          <h2>Publications</h2>
-          <ul class="list">
-            <li>Author, A. (Year). Article title. <em>Journal Name</em>.</li>
-            <li>Author, B. (Year). Conference paper title. <em>Conference Name</em>.</li>
-            <li>Author, C. (Year). Book chapter title. <em>Publisher</em>.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="teaching" class="section section-alt">
-        <div class="container">
-          <h2>Teaching</h2>
-          <p>List courses, workshops, or mentorship areas you lead.</p>
-          <div class="grid">
-            <article>
-              <h3>Course Title</h3>
-              <p>Semester, institution, and focus area.</p>
-            </article>
-            <article>
-              <h3>Seminar Series</h3>
-              <p>Describe themes or guest speakers.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="cv" class="section">
-        <div class="container">
-          <h2>CV</h2>
-          <p>
-            Provide a quick summary of academic appointments, education, and honors. Add a link
-            to a downloadable CV file when ready.
+        <div class="section-header">
+          <h2>Selected Publications</h2>
+          <p class="section-subtitle">
+            Chronological list, most recent first.
           </p>
-          <button class="button" type="button">Download CV (PDF)</button>
+        </div>
+        <ol class="pub-list">
+          <li>
+            <div class="pub-year">2024</div>
+            <div class="pub-details">
+              <p class="pub-title">
+                Collaborative AI systems for transparent research workflows.
+              </p>
+              <p class="pub-meta">
+                Stephanie Flores, Coauthor A, Coauthor B · Conference on Human
+                Factors in Computing Systems (CHI)
+              </p>
+              <a class="pub-link" href="#">PDF</a>
+            </div>
+          </li>
+          <li>
+            <div class="pub-year">2023</div>
+            <div class="pub-details">
+              <p class="pub-title">
+                Designing creative tools that respect authorship.
+              </p>
+              <p class="pub-meta">
+                Stephanie Flores · ACM Creativity &amp; Cognition
+              </p>
+              <a class="pub-link" href="#">PDF</a>
+            </div>
+          </li>
+          <li>
+            <div class="pub-year">2022</div>
+            <div class="pub-details">
+              <p class="pub-title">Equitable interfaces for learner support.</p>
+              <p class="pub-meta">
+                Stephanie Flores, Coauthor C · Journal of the Learning Sciences
+              </p>
+              <a class="pub-link" href="#">PDF</a>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="teaching" class="section muted">
+        <div class="section-header">
+          <h2>Teaching</h2>
+          <p class="section-subtitle">Courses and mentoring.</p>
+        </div>
+        <ul class="list">
+          <li>
+            <strong>Human-Computer Interaction (Graduate)</strong> · Spring 2024
+          </li>
+          <li>
+            <strong>Designing with AI</strong> · Fall 2023
+          </li>
+          <li>
+            <strong>Research Methods in Computing</strong> · Spring 2023
+          </li>
+        </ul>
+      </section>
+
+      <section id="updates" class="section">
+        <div class="section-header">
+          <h2>Updates</h2>
+          <p class="section-subtitle">
+            Latest highlights from BlueSky and LinkedIn.
+          </p>
+        </div>
+        <div class="updates-grid">
+          <article class="update">
+            <p class="update-label">BlueSky · Jan 2025</p>
+            <p>
+              Shared a new preprint on transparent AI collaborations—thread is
+              live with a summary and open questions.
+            </p>
+            <a href="https://bsky.app/" target="_blank" rel="noreferrer">
+              View post
+            </a>
+          </article>
+          <article class="update">
+            <p class="update-label">LinkedIn · Dec 2024</p>
+            <p>
+              Joined a cross-university initiative on responsible AI in
+              education. Looking forward to the first workshop!
+            </p>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+              View post
+            </a>
+          </article>
         </div>
       </section>
 
-      <section id="contact" class="section section-alt">
-        <div class="container">
+      <section id="cv" class="section muted">
+        <div class="section-header">
+          <h2>Curriculum Vitae</h2>
+          <p class="section-subtitle">Preview the CV and download the PDF.</p>
+        </div>
+        <div class="cv-card">
+          <a class="button primary" href="assets/cv.pdf" target="_blank" rel="noreferrer">
+            Download CV (PDF)
+          </a>
+          <details>
+            <summary>Preview CV</summary>
+            <div class="cv-preview">
+              <object data="assets/cv.pdf" type="application/pdf">
+                <p>
+                  Your browser can’t display the PDF. You can
+                  <a href="assets/cv.pdf">download it here</a>.
+                </p>
+              </object>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="section-header">
           <h2>Contact</h2>
-          <p>Include preferred contact methods, office hours, or collaboration details.</p>
-          <div class="contact-grid">
-            <div>
-              <h3>Email</h3>
-              <p>name@example.com</p>
-            </div>
-            <div>
-              <h3>Office</h3>
-              <p>Building, Room 000</p>
-            </div>
-            <div>
-              <h3>Social</h3>
-              <p>@yourhandle</p>
-            </div>
-          </div>
+          <p class="section-subtitle">Let’s connect.</p>
+        </div>
+        <div class="contact-card">
+          <p>
+            Email: <a href="mailto:hello@example.com">hello@example.com</a>
+          </p>
+          <p>Location: San Francisco, CA</p>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>© 2024 Your Name. All rights reserved.</p>
-      </div>
+      <p>© 2025 Stephanie Flores. All rights reserved.</p>
     </footer>
-
-    <script src="assets/js/main.js"></script>
   </body>
 </html>
