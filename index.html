@@ -280,7 +280,7 @@
       }
 
       .card {
-        background: #ffffff;
+        background: rgba(255, 255, 255, 0.94);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         padding: 1.25rem;
@@ -326,7 +326,7 @@
       }
 
       .update {
-        background: #ffffff;
+        background: rgba(255, 255, 255, 0.94);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         padding: 1.25rem;
@@ -343,7 +343,7 @@
 
       .cv-card,
       .contact-card {
-        background: #ffffff;
+        background: rgba(255, 255, 255, 0.94);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         padding: 1.25rem;
@@ -473,6 +473,9 @@
   </head>
 
   <body>
+    <div class="global-visual" aria-hidden="true">
+      <canvas id="hero-canvas"></canvas>
+    </div>
     <header class="site-header">
       <nav class="nav">
         <a class="logo" href="#top">Saul J. Flores</a>
@@ -886,6 +889,8 @@
               A Cloud-Based Platform for Accessible Large-Scale Molecular Docking and Ligand Pose Evaluation.
             </p>
           </article>
+        </div>
+      </section>
 
           <article class="update">
             <p class="update-label">In Preparation</p>
