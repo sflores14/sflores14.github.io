@@ -1,0 +1,26 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" rx="60" fill="#E5EFEA" />
+  <circle cx="200" cy="170" r="72" fill="#C1D9D1" />
+  <path
+    d="M90 330C120 275 160 248 200 248C240 248 280 275 310 330"
+    stroke="#8AB7AA"
+    stroke-width="24"
+    stroke-linecap="round"
+  />
+  <path
+    d="M150 160C150 140 166 124 186 124H214C234 124 250 140 250 160"
+    stroke="#8AB7AA"
+    stroke-width="16"
+    stroke-linecap="round"
+  />
+  <text
+    x="200"
+    y="370"
+    text-anchor="middle"
+    font-family="Poppins, Arial, sans-serif"
+    font-size="20"
+    fill="#2E8C7F"
+  >
+    Headshot
+  </text>
+</svg>
