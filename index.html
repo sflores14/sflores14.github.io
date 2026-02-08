@@ -439,6 +439,10 @@
         .timeline-item:nth-child(even) {
           grid-template-columns: 1fr;
         }
+        .timeline-item,
+        .timeline-item:nth-child(even) {
+          grid-template-columns: 1fr;
+        }
         .nav {
           flex-direction: column;
           align-items: flex-start;
@@ -474,6 +478,9 @@
 
     <main id="top">
       <section class="hero">
+        <div class="hero-visual" aria-hidden="true">
+          <canvas id="hero-canvas"></canvas>
+        </div>
         <div class="hero-media">
           <img
             src="assets/images/saul-flores-headshot.png"
@@ -752,7 +759,7 @@
         </div>
       </section>
 
-      <section id="cv" class="section">
+      <section id="awards" class="section">
         <div class="section-header">
           <h2>Curriculum Vitae</h2>
           <p class="section-subtitle">Preview my two-page CV (PDF).</p>
