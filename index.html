@@ -20,6 +20,8 @@
     />
     <meta property="og:type" content="website" />
 
+    <link rel="icon" href="assets/images/saul-flores-headshot.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -34,15 +36,17 @@
     <style>
       :root {
         --umd-red: #e21833;
-        --umd-red-dark: #003b67;
+        --umd-navy: #1f2a44;
+        --umd-red-dark: #16233b;
         --umd-gold: #ffd200;
-        --umd-black: #939598;
+        --umd-sand: #f5efe6;
+        --umd-gray: #7a7d85;
 
         --bg: #ffffff;
-        --bg-muted: #f5f6f7;
+        --bg-muted: var(--umd-sand);
 
         --text: #111827;
-        --text-muted: #fefae0;
+        --text-muted: #4b5563;
 
         --radius: 14px;
         --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
@@ -124,24 +128,43 @@
       }
 
       .hero {
+        position: relative;
         display: grid;
-        grid-template-columns: 320px 1fr;
+        grid-template-columns: 220px 1fr;
         gap: 2.25rem;
         align-items: center;
         padding-top: 2.5rem;
+        overflow: hidden;
       }
 
       .hero-media img {
         width: 100%;
+        max-width: 220px;
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         border: 3px solid rgba(255, 210, 0, 0.45);
       }
 
-      .media-caption {
-        margin-top: 0.75rem;
-        color: var(--text-muted);
-        font-size: 0.9rem;
+      .global-visual {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .global-visual canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      main,
+      .hero-content,
+      .hero-media,
+      .site-header,
+      .site-footer {
+        position: relative;
+        z-index: 1;
       }
 
       .eyebrow {
@@ -196,8 +219,8 @@
       }
 
       .button.primary:hover {
-        background: var(--umd-red-dark);
-        border-color: var(--umd-red-dark);
+        background: var(--umd-navy);
+        border-color: var(--umd-navy);
       }
 
       .button.ghost {
@@ -244,23 +267,20 @@
         border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       }
 
-      .two-column {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-      }
-
       .card-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
       }
 
-      .card {
-        background: #ffffff;
+      .surface {
+        background: rgba(255, 255, 255, 0.94);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         padding: 1.25rem;
+      }
+
+      .card {
         border-top: 5px solid var(--umd-red);
       }
 
@@ -286,16 +306,6 @@
         border: 1px solid rgba(255, 210, 0, 0.55);
       }
 
-      .list {
-        padding-left: 1.1rem;
-        margin: 0;
-      }
-
-      .list li {
-        margin: 0.75rem 0;
-        line-height: 1.6;
-      }
-
       .updates-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -303,10 +313,6 @@
       }
 
       .update {
-        background: #ffffff;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 1.25rem;
         border-left: 6px solid var(--umd-gold);
       }
 
@@ -320,10 +326,6 @@
 
       .cv-card,
       .contact-card {
-        background: #ffffff;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 1.25rem;
         border-top: 5px solid var(--umd-gold);
       }
 
@@ -331,6 +333,71 @@
         cursor: pointer;
         font-family: "Montserrat", sans-serif;
         font-weight: 900;
+        list-style: none;
+      }
+
+      details summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .detail-body {
+        margin-top: 0.75rem;
+        color: var(--text-muted);
+      }
+
+      .timeline {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 140px;
+        gap: 1rem;
+        align-items: start;
+      }
+
+      .timeline-item:nth-child(even) {
+        grid-template-columns: 140px minmax(0, 1fr);
+      }
+
+      .timeline-item:nth-child(even) .timeline-media {
+        order: -1;
+      }
+
+      .timeline-media {
+        min-height: 110px;
+        border-radius: 12px;
+        border: 1px dashed rgba(31, 42, 68, 0.4);
+        background: rgba(31, 42, 68, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: var(--umd-gray);
+      }
+
+      .timeline-media.hidden {
+        display: none;
+      }
+
+      .reveal-button {
+        margin-top: 0.75rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 2px solid var(--umd-red);
+        background: transparent;
+        color: var(--umd-red);
+        padding: 0.6rem 0.9rem;
+        border-radius: 999px;
+        font-weight: 800;
+        font-family: "Montserrat", sans-serif;
+        cursor: pointer;
+      }
+
+      .reveal-button:hover {
+        background: rgba(226, 24, 51, 0.08);
       }
 
       .cv-preview {
@@ -345,7 +412,7 @@
       }
 
       .site-footer {
-        background: var(--umd-black);
+        background: var(--umd-navy);
         color: #ffffff;
         padding: 1.5rem 1rem;
         margin-top: 2rem;
@@ -361,9 +428,15 @@
         .hero {
           grid-template-columns: 1fr;
         }
+        .hero-media img {
+          max-width: 180px;
+        }
         .card-grid,
-        .updates-grid,
-        .two-column {
+        .updates-grid {
+          grid-template-columns: 1fr;
+        }
+        .timeline-item,
+        .timeline-item:nth-child(even) {
           grid-template-columns: 1fr;
         }
         .nav {
@@ -381,17 +454,20 @@
   </head>
 
   <body>
+    <div class="global-visual" aria-hidden="true">
+      <canvas id="hero-canvas"></canvas>
+    </div>
     <header class="site-header">
       <nav class="nav">
         <a class="logo" href="#top">Saul J. Flores</a>
         <div class="nav-links">
-          <a href="#about">About</a>
+          <a href="#education">Education</a>
           <a href="#research">Research</a>
-          <a href="#teaching">Teaching</a>
-          <a href="#updates">Updates</a>
+          <a href="#projects">Projects</a>
+          <a href="#presentations">Presentations</a>
           <a href="#cv">CV</a>
           <a href="#contact">Contact</a>
-          <a href="link">Links</a>
+          <a href="#links">Links</a>
         </div>
       </nav>
     </header>
@@ -410,17 +486,19 @@
           <h1>Hi, I’m Saul Flores.</h1>
           <p class="hero-summary">
             I’m a Biochemistry PhD candidate at the University of Maryland,
-            College Park. My dissertation research focuses on exopolysaccharide pathways in bacterial biofilms. I combine structural biology and computational approaches to connect molecular
-            mechanism to emergent biofilm properties.
+            College Park. My dissertation research focuses on exopolysaccharide pathways in
+            bacterial biofilms, combining structural biology, membrane protein biochemistry,
+            and computation to connect molecular mechanism to emergent biofilm properties.
+            I also mentor students through La Familia Peer Mentoring and InspiraSTEM and
+            contribute to science policy initiatives through SNAP and professional societies.
           </p>
 
           <div class="hero-actions">
-            <a class="button primary" href="assets/Flores_Saul_CV_Draft11%202%20Page.docx.pdf" target="_blank" rel="noreferrer">Preview CV</a>
+            <a class="button primary" href="#cv">Preview CV</a>
             <a class="button ghost" href="#contact">Get in touch</a>
           </div>
 
           <div class="social-links">
-            <a href="mailto:sflores4@umd.edu">sflores4@umd.edu</a>
             <a href="https://github.com/sflores14" target="_blank" rel="noreferrer">GitHub</a>
             <a href="https://www.linkedin.com/in/saulfloresjr/" target="_blank" rel="noreferrer">LinkedIn</a>
             <a href="https://bsky.app/profile/florus11.bsky.social" target="_blank" rel="noreferrer">BlueSky</a>
@@ -428,132 +506,261 @@
         </div>
       </section>
 
-      <section id="research" class="section muted">
+      <section id="education" class="section muted">
         <div class="section-header">
-          <h2>Research</h2>
+          <h2>Education</h2>
+          <p class="section-subtitle">Academic preparation and credentials.</p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card surface">
+            <details>
+              <summary>University of Maryland, College Park · PhD · Aug. 2022 – Present</summary>
+              <div class="detail-body">
+                <p>
+                  PhD, Biochemistry (In Progress)
+                </p>
+                <p>Advanced to candidacy May 2025</p>
+                <p>Ronald E. McNair Graduate Fellowship · UMD Graduate School Society of Fellows</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="card surface">
+            <details>
+              <summary>University of Maryland, College Park · B.S. · Aug. 2018 – May 2022</summary>
+              <div class="detail-body">
+                <p>
+                  B.S., Biochemistry and Biological Sciences
+                </p>
+                <p>Ronald E. McNair Summer Research Fellowship · Parmar Family Endowed Scholarship</p>
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section id="research" class="section">
+        <div class="section-header">
+          <h2>Research Experience</h2>
           <p class="section-subtitle">
-            Core areas and current projects (methods-forward, reproducible, and mechanism-driven).
+            Graduate and undergraduate research roles across biochemistry and neuroscience.
           </p>
         </div>
 
         <div class="card-grid">
-          <article class="card">
-            <h3>Nfr System and Biofilm Exopolysaccharides</h3>
-            <p>
-              Mechanistic characterization of Nfr-mediated ManNAc polymer synthesis, regulation, and remodeling
-              in <em>E. coli</em> biofilms, and how these states map to measurable matrix architecture.
-            </p>
-            <p class="tag-list">
-              <span>EPS pathways</span>
-              <span>cyclic di-GMP</span>
-              <span>biofilm phenotype</span>
-            </p>
+          <article class="card surface">
+            <details>
+              <summary>Graduate Research Assistant · UMD · Aug. 2024 – Present</summary>
+              <div class="detail-body">
+                <p>
+                  Supervisor: Dr. Myles Poulin · Dept. of Chemistry & Biochemistry
+                </p>
+                <p class="tag-list">
+                  <span>biofilms</span>
+                  <span>structural biology</span>
+                  <span>membrane enzymes</span>
+                </p>
+              </div>
+            </details>
           </article>
 
-          <article class="card">
-            <h3>Membrane Protein Biochemistry and cryo-EM</h3>
-            <p>
-              Detergent-free isolation and reconstitution of membrane enzymes into synthetic nanodiscs via copolymer
-              screening, supporting single-particle cryo-EM grid preparation and iterative optimization for structure determination.
-            </p>
-            <p class="tag-list">
-              <span>nanodiscs</span>
-              <span>copolymers</span>
-              <span>single-particle cryo-EM</span>
-            </p>
+          <article class="card surface">
+            <details>
+              <summary>Graduate Research Assistant · UMD · Dec. 2022 – Aug. 2024</summary>
+              <div class="detail-body">
+                <p>
+                  Supervisor: Dr. Yanxin Liu · Dept. of Chemistry & Biochemistry
+                </p>
+                <p class="tag-list">
+                  <span>biophysical chemistry</span>
+                  <span>protein biochemistry</span>
+                  <span>cryo-EM</span>
+                </p>
+              </div>
+            </details>
           </article>
 
-          <article class="card">
-            <h3>Model-Informed Computation and Open Workflows</h3>
-            <p>
-              Docking and molecular dynamics to evaluate polymer fragment binding modes, extract interaction fingerprints,
-              and nominate candidate residues for targeted mutagenesis. I also contribute to open-source, notebook-first workflows
-              for accessible modeling and docking.
-            </p>
-            <p class="tag-list">
-              <span>docking</span>
-              <span>molecular dynamics</span>
-              <span>reproducible notebooks</span>
-            </p>
+          <article class="card surface">
+            <details>
+              <summary>Undergraduate Researcher · UMD · Jan. 2021 – May 2022</summary>
+              <div class="detail-body">
+                <p>
+                  Supervisor: Dr. Osvaldo Gutierrez · Dept. of Chemistry & Biochemistry
+                </p>
+                <p class="tag-list">
+                  <span>organic chemistry</span>
+                  <span>catalysis</span>
+                  <span>mechanism</span>
+                </p>
+              </div>
+            </details>
+          </article>
+
+          <article class="card surface">
+            <details>
+              <summary>Research Intern · NIH · Jun. 2018 – Sep. 2019</summary>
+              <div class="detail-body">
+                <p>
+                  Supervisor: Dr. Avindra Nath · National Institute of Neurological Disorders & Stroke
+                </p>
+                <p>NIH NINDS Exceptional Summer Intern Award (2019)</p>
+                <p class="tag-list">
+                  <span>neuroscience</span>
+                  <span>transcriptomics</span>
+                  <span>virology</span>
+                </p>
+              </div>
+            </details>
           </article>
         </div>
       </section>
 
-      <section id="teaching" class="section">
+      <section id="teaching" class="section muted">
         <div class="section-header">
-          <h2>Teaching and Mentoring</h2>
-          <p class="section-subtitle">Courses, training, and community building.</p>
+          <h2>Teaching & Academic Leadership</h2>
+          <p class="section-subtitle">Courses taught, leadership roles, and mentoring.</p>
         </div>
 
-        <ul class="list">
-          <li>
-            <strong>Graduate and Undergraduate Teaching Assistant</strong> · University of Maryland, College Park
-            <br />
-            Courses: BCHM477, CHEM232, BSCI170, BSCI171
-          </li>
-          <li>
-            <strong>Program Lead</strong> · La Familia Peer Mentoring Program
-            <br />
-            Student engagement, retention programming, and mentoring workflows.
-          </li>
-          <li>
-            <strong>Instructor and Mentor</strong> · InspiraSTEM (El Salvador)
-            <br />
-            Workshop development and instruction in accessible computational biochemistry.
-          </li>
-        </ul>
+        <div class="timeline">
+          <div class="card surface">
+            <div class="timeline-item">
+              <details>
+                <summary>Graduate & Undergraduate Teaching Assistant · Aug. 2020 – Present</summary>
+                <div class="detail-body">
+                  <p>University of Maryland, College Park</p>
+                  <p>Courses: BCHM477, CHEM232, BSCI170, BSCI171</p>
+                </div>
+              </details>
+              <div class="timeline-media hidden">Image</div>
+            </div>
+          </div>
+          <div class="card surface">
+            <div class="timeline-item">
+              <details>
+                <summary>Graduate Administrative Assistant · May 2022 – Present</summary>
+                <div class="detail-body">
+                  <p>University of Maryland, College Park</p>
+                  <p>Program Lead: La Familia Peer Mentoring Program</p>
+                </div>
+              </details>
+              <div class="timeline-media hidden">Image</div>
+            </div>
+          </div>
+          <div class="card surface">
+            <div class="timeline-item">
+              <details>
+                <summary>Instructor & Mentor · May 2025 – Present</summary>
+                <div class="detail-body">
+                  <p>InspiraSTEM (El Salvador)</p>
+                  <p>Workshop: Practical Computational Biochemistry: Macromolecular Modeling & Analysis</p>
+                </div>
+              </details>
+              <div class="timeline-media hidden">Image</div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section id="updates" class="section muted">
+      <section id="projects" class="section">
         <div class="section-header">
-          <h2>Updates</h2>
+          <h2>Selected Scholarly Projects</h2>
           <p class="section-subtitle">
-            Recent milestones and what I’m building next.
+            Manuscripts and collaborative projects in preparation.
           </p>
         </div>
 
         <div class="updates-grid">
-          <article class="update">
-            <p class="update-label">Research</p>
-            <p>
-              Advanced to candidacy and continued building a detergent-free nanodisc workflow to support NfrB cryo-EM
-              and mechanism-guided assay development.
-            </p>
+          <article class="update surface">
+            <details>
+              <summary>Cloud-Bind · In Preparation · 2025</summary>
+              <div class="detail-body">
+                <p>
+                  Pedebos, C.; da Silva Tarouco, D.; Ligabue-Braun, R.; Flores, S. J.; Arantes, P. Cloud-Bind:
+                  A Cloud-Based Platform for Accessible Large-Scale Molecular Docking and Ligand Pose Evaluation.
+                </p>
+              </div>
+            </details>
           </article>
 
-          <article class="update">
-            <p class="update-label">Open Science</p>
-            <p>
-              Contributed notebook-first workflows for reproducible modeling and docking, emphasizing portability,
-              transparency, and training-friendly defaults.
-            </p>
+          <article class="update surface">
+            <details>
+              <summary>SNAP Infrastructure · In Preparation · 2025</summary>
+              <div class="detail-body">
+                <p>
+                  Di Tomassi, I.; Flores, S. J.; Scales, E.; Rich, A.; Flores, J. P.; Arnett, M.; Boufidis, D.; Davis, B.;
+                  Finn, A.; Rader Groves, A.; Patel, D.; Lando, A.; Dant, C. The Scientist Network for Advancing Policy (SNAP):
+                  Building Infrastructure for Early-Career Scientists in Policy and Public Engagement.
+                </p>
+              </div>
+            </details>
           </article>
+        </div>
+      </section>
 
-          <article class="update">
-            <p class="update-label">Mentoring</p>
-            <p>
-              Continued mentoring through La Familia and InspiraSTEM, focusing on practical skills, confidence-building,
-              and access to computational tools for students with limited local resources.
-            </p>
-          </article>
+      <section id="presentations" class="section muted">
+        <div class="section-header">
+          <h2>Selected Presentations & Talks</h2>
+          <p class="section-subtitle">Recent and upcoming research presentations.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="card surface">
+            <div class="timeline-item">
+              <details>
+                <summary>Structural and Functional Insights into Nfr-Mediated Polysaccharide Synthesis in <em>E. coli</em> Biofilms · 2025–2026</summary>
+                <div class="detail-body">
+                  <p>ACS Fall 2025; SACNAS NDiSTEM 2025; InspiraSTEM 2026 (Upcoming)</p>
+                </div>
+              </details>
+              <div class="timeline-media hidden">Image</div>
+            </div>
+          </div>
+          <div class="card surface">
+            <div class="timeline-item">
+              <details>
+                <summary>C-H Activation in Iron-Catalyzed Ortho Homoallylation of Aromatic Ketones with Methylenecyclopropanes · 2021</summary>
+                <div class="detail-body">
+                  <p>McNair Conference 2021; USM LSAMP Research Symposium 2021</p>
+                </div>
+              </details>
+              <div class="timeline-media hidden">Image</div>
+            </div>
+          </div>
+          <div class="card surface">
+            <div class="timeline-item">
+              <details>
+                <summary>Modulating HERV-K Transcripts Increases Susceptibility to Chemotherapeutic Drugs in AT/RT Cells · 2019</summary>
+                <div class="detail-body">
+                  <p>NIH Summer Poster Day 2019</p>
+                </div>
+              </details>
+              <div class="timeline-media hidden">Image</div>
+            </div>
+          </div>
+          <div class="card surface">
+            <div class="timeline-item">
+              <details>
+                <summary>Ouabain Treatment Reduces HERV-K Transcript Expression via Increased Methylation · 2018</summary>
+                <div class="detail-body">
+                  <p>NIH Summer Poster Day 2018</p>
+                </div>
+              </details>
+              <div class="timeline-media hidden">Image</div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section id="cv" class="section">
         <div class="section-header">
           <h2>Curriculum Vitae</h2>
-          <p class="section-subtitle">Download and preview my two-page CV (PDF).</p>
+          <p class="section-subtitle">Preview my two-page CV (PDF).</p>
         </div>
 
-        <div class="cv-card">
-          <div class="hero-actions">
-            <a class="button primary" href="assets/Flores_Saul_CV_Draft11%202%20Page.docx.pdf" target="_blank" rel="noreferrer">
-              Download CV (PDF)
-            </a>
-          </div>
-
-          <details>
-            <summary>Preview CV</summary>
+        <div class="cv-card surface">
+            <details open>
+              <summary>Preview CV · Updated 2025</summary>
             <div class="cv-preview">
               <object data="assets/Flores_Saul_CV_Draft11%202%20Page.docx.pdf" type="application/pdf">
                 <p>
@@ -572,9 +779,10 @@
           <p class="section-subtitle">Let’s connect.</p>
         </div>
 
-        <div class="contact-card">
-          <p>Email: <a href="mailto:sflores4@umd.edu">sflores4@umd.edu</a></p>
+        <div class="contact-card surface">
           <p>Location: DC metro area</p>
+          <button class="reveal-button" id="reveal-email" type="button">Reveal email</button>
+          <p id="email-text" hidden>sflores4[AT]umd.edu</p>
           <p>
             Links:
             <a href="https://github.com/sflores14" target="_blank" rel="noreferrer">GitHub</a>
@@ -582,7 +790,25 @@
             <a href="https://www.linkedin.com/in/saulfloresjr/" target="_blank" rel="noreferrer">LinkedIn</a>
             ·
             <a href="https://bsky.app/profile/florus11.bsky.social" target="_blank" rel="noreferrer">BlueSky</a>
+            ·
+            <span>SNAP · SACNAS · ACS · ASBMB</span>
           </p>
+        </div>
+      </section>
+
+      <section id="links" class="section muted">
+        <div class="section-header">
+          <h2>Links I Like</h2>
+          <p class="section-subtitle">A growing list of useful tools, labs, and resources.</p>
+        </div>
+
+        <div class="contact-card surface">
+          <details>
+            <summary>Open link list · Updated 2025</summary>
+            <div class="detail-body">
+              <p>Add your favorite links here as you discover them.</p>
+            </div>
+          </details>
         </div>
       </section>
     </main>
@@ -590,5 +816,66 @@
     <footer class="site-footer">
       <p>© 2026 Saul J. Flores</p>
     </footer>
+    <script>
+      const canvas = document.getElementById("hero-canvas");
+      const ctx = canvas.getContext("2d");
+      const blobs = [
+        { x: 0.2, y: 0.25, r: 240, dx: 0.0002, dy: 0.00015, hue: 350 },
+        { x: 0.65, y: 0.2, r: 210, dx: -0.00018, dy: 0.0002, hue: 210 },
+        { x: 0.5, y: 0.7, r: 280, dx: 0.00016, dy: -0.00012, hue: 28 },
+        { x: 0.15, y: 0.75, r: 180, dx: 0.00014, dy: -0.0001, hue: 30 },
+        { x: 0.85, y: 0.6, r: 200, dx: -0.00012, dy: 0.00018, hue: 200 },
+      ];
+      let mouseX = 0.5;
+      let mouseY = 0.5;
+
+      function resizeCanvas() {
+        canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+        canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+      }
+
+      function drawBlob(blob) {
+        const x = blob.x * canvas.width;
+        const y = blob.y * canvas.height;
+        const radius = blob.r * window.devicePixelRatio;
+        const gradient = ctx.createRadialGradient(x, y, radius * 0.2, x, y, radius);
+        gradient.addColorStop(0, `hsla(${blob.hue}, 70%, 60%, 0.35)`);
+        gradient.addColorStop(1, `hsla(${blob.hue}, 70%, 40%, 0)`);
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        blobs.forEach((blob) => {
+          blob.x += blob.dx + (mouseX - 0.5) * 0.00012;
+          blob.y += blob.dy + (mouseY - 0.5) * 0.00012;
+          if (blob.x < 0.1 || blob.x > 0.9) blob.dx *= -1;
+          if (blob.y < 0.1 || blob.y > 0.9) blob.dy *= -1;
+          drawBlob(blob);
+        });
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener("resize", resizeCanvas);
+      window.addEventListener("mousemove", (event) => {
+        mouseX = event.clientX / window.innerWidth;
+        mouseY = event.clientY / window.innerHeight;
+      });
+
+      resizeCanvas();
+      animate();
+
+      const revealButton = document.getElementById("reveal-email");
+      const emailText = document.getElementById("email-text");
+      if (revealButton && emailText) {
+        revealButton.addEventListener("click", () => {
+          emailText.hidden = !emailText.hidden;
+          revealButton.textContent = emailText.hidden ? "Reveal email" : "Hide email";
+        });
+      }
+    </script>
   </body>
 </html>
