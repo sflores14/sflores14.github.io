@@ -50,7 +50,7 @@
 
         --radius: 14px;
         --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        --max: 1100px;
+        --max: 1200px;
       }
 
       * {
@@ -70,7 +70,10 @@
 
       .site-header {
         position: sticky;
+        position: -webkit-sticky;
         top: 0;
+        left: 0;
+        right: 0;
         z-index: 50;
         background: var(--umd-red);
         border-bottom: 6px solid var(--umd-gold);
@@ -135,8 +138,8 @@
 
       .hero-card {
         display: grid;
-        grid-template-columns: minmax(220px, 280px) 1fr;
-        gap: 2rem;
+        grid-template-columns: minmax(260px, 340px) 1fr;
+        gap: 2.5rem;
         align-items: start;
       }
 
@@ -286,6 +289,12 @@
 
       .card {
         border-top: 5px solid var(--umd-red);
+      }
+
+      .card-grid .card:nth-child(even),
+      .timeline .card:nth-child(even),
+      .updates-grid .update:nth-child(even) {
+        background: var(--umd-sand);
       }
 
       .card:nth-child(3n + 2) {
@@ -458,6 +467,10 @@
         }
         .hero-card {
           grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        .hero-media img {
+          max-width: 100%;
         }
         .hero-media img {
           max-width: 100%;
@@ -548,18 +561,6 @@
         <div class="card-grid">
           <article class="card surface">
             <details>
-              <summary>University of Maryland, College Park · B.S. · <span class="summary-date">Aug. 2018 – May 2022</span></summary>
-              <div class="detail-body">
-                <p>
-                  B.S., Biochemistry and Biological Sciences
-                </p>
-                <p>Ronald E. McNair Summer Research Fellowship · Parmar Family Endowed Scholarship</p>
-              </div>
-            </details>
-          </article>
-
-          <article class="card surface">
-            <details>
               <summary>University of Maryland, College Park · PhD · <span class="summary-date">Aug. 2022 – Present</span></summary>
               <div class="detail-body">
                 <p>
@@ -567,6 +568,18 @@
                 </p>
                 <p>Advanced to candidacy May 2025</p>
                 <p>Ronald E. McNair Graduate Fellowship · UMD Graduate School Society of Fellows</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="card surface">
+            <details>
+              <summary>University of Maryland, College Park · B.S. · <span class="summary-date">Aug. 2018 – May 2022</span></summary>
+              <div class="detail-body">
+                <p>
+                  B.S., Biochemistry and Biological Sciences
+                </p>
+                <p>Ronald E. McNair Summer Research Fellowship · Parmar Family Endowed Scholarship</p>
               </div>
             </details>
           </article>
@@ -584,32 +597,17 @@
         <div class="card-grid">
           <article class="card surface">
             <details>
-              <summary>Research Intern · NIH · <span class="summary-date">Jun. 2018 – Sep. 2019</span></summary>
+              <summary>Graduate Research Assistant · UMD · <span class="summary-date">Aug. 2024 – Present</span></summary>
               <div class="detail-body">
                 <p>
-                  Supervisor: Dr. Avindra Nath · National Institute of Neurological Disorders & Stroke
-                </p>
-                <p>NIH NINDS Exceptional Summer Intern Award (2019)</p>
-                <p class="tag-list">
-                  <span>neuroscience</span>
-                  <span>transcriptomics</span>
-                  <span>virology</span>
-                </p>
-              </div>
-            </details>
-          </article>
-
-          <article class="card surface">
-            <details>
-              <summary>Undergraduate Researcher · UMD · <span class="summary-date">Jan. 2021 – May 2022</span></summary>
-              <div class="detail-body">
-                <p>
-                  Supervisor: Dr. Osvaldo Gutierrez · Dept. of Chemistry & Biochemistry
+                  Supervisor:
+                  <a href="https://chem.umd.edu/people/myles-b-poulin" target="_blank" rel="noreferrer">Dr. Myles Poulin</a>
+                  · Dept. of Chemistry & Biochemistry
                 </p>
                 <p class="tag-list">
-                  <span>organic chemistry</span>
-                  <span>catalysis</span>
-                  <span>mechanism</span>
+                  <span>biofilms</span>
+                  <span>structural biology</span>
+                  <span>membrane enzymes</span>
                 </p>
               </div>
             </details>
@@ -633,17 +631,32 @@
 
           <article class="card surface">
             <details>
-              <summary>Graduate Research Assistant · UMD · <span class="summary-date">Aug. 2024 – Present</span></summary>
+              <summary>Undergraduate Researcher · UMD · <span class="summary-date">Jan. 2021 – May 2022</span></summary>
               <div class="detail-body">
                 <p>
-                  Supervisor:
-                  <a href="https://chem.umd.edu/people/myles-b-poulin" target="_blank" rel="noreferrer">Dr. Myles Poulin</a>
-                  · Dept. of Chemistry & Biochemistry
+                  Supervisor: Dr. Osvaldo Gutierrez · Dept. of Chemistry & Biochemistry
                 </p>
                 <p class="tag-list">
-                  <span>biofilms</span>
-                  <span>structural biology</span>
-                  <span>membrane enzymes</span>
+                  <span>organic chemistry</span>
+                  <span>catalysis</span>
+                  <span>mechanism</span>
+                </p>
+              </div>
+            </details>
+          </article>
+
+          <article class="card surface">
+            <details>
+              <summary>Research Intern · NIH · <span class="summary-date">Jun. 2018 – Sep. 2019</span></summary>
+              <div class="detail-body">
+                <p>
+                  Supervisor: Dr. Avindra Nath · National Institute of Neurological Disorders & Stroke
+                </p>
+                <p>NIH NINDS Exceptional Summer Intern Award (2019)</p>
+                <p class="tag-list">
+                  <span>neuroscience</span>
+                  <span>transcriptomics</span>
+                  <span>virology</span>
                 </p>
               </div>
             </details>
@@ -661,10 +674,10 @@
           <div class="card surface">
             <div class="timeline-item">
               <details>
-                <summary>Graduate & Undergraduate Teaching Assistant · <span class="summary-date">Aug. 2020 – Present</span></summary>
+                <summary>Instructor & Mentor · <span class="summary-date">May 2025 – Present</span></summary>
                 <div class="detail-body">
-                  <p>University of Maryland, College Park</p>
-                  <p>Courses: BCHM477, CHEM232, BSCI170, BSCI171</p>
+                  <p>InspiraSTEM (El Salvador)</p>
+                  <p>Workshop: Practical Computational Biochemistry: Macromolecular Modeling & Analysis</p>
                 </div>
               </details>
               <div class="timeline-media hidden">Image</div>
@@ -685,10 +698,10 @@
           <div class="card surface">
             <div class="timeline-item">
               <details>
-                <summary>Instructor & Mentor · <span class="summary-date">May 2025 – Present</span></summary>
+                <summary>Graduate & Undergraduate Teaching Assistant · <span class="summary-date">Aug. 2020 – Present</span></summary>
                 <div class="detail-body">
-                  <p>InspiraSTEM (El Salvador)</p>
-                  <p>Workshop: Practical Computational Biochemistry: Macromolecular Modeling & Analysis</p>
+                  <p>University of Maryland, College Park</p>
+                  <p>Courses: BCHM477, CHEM232, BSCI170, BSCI171</p>
                 </div>
               </details>
               <div class="timeline-media hidden">Image</div>
@@ -743,20 +756,9 @@
           <div class="card surface">
             <div class="timeline-item">
               <details>
-                <summary>Ouabain Treatment Reduces HERV-K Transcript Expression via Increased Methylation · <span class="summary-date">2018</span></summary>
+                <summary>Structural and Functional Insights into Nfr-Mediated Polysaccharide Synthesis in <em>E. coli</em> Biofilms · <span class="summary-date">2025–2026</span></summary>
                 <div class="detail-body">
-                  <p>NIH Summer Poster Day 2018</p>
-                </div>
-              </details>
-              <div class="timeline-media hidden">Image</div>
-            </div>
-          </div>
-          <div class="card surface">
-            <div class="timeline-item">
-              <details>
-                <summary>Modulating HERV-K Transcripts Increases Susceptibility to Chemotherapeutic Drugs in AT/RT Cells · <span class="summary-date">2019</span></summary>
-                <div class="detail-body">
-                  <p>NIH Summer Poster Day 2019</p>
+                  <p>ACS Fall 2025; SACNAS NDiSTEM 2025; InspiraSTEM 2026 (Upcoming)</p>
                 </div>
               </details>
               <div class="timeline-media hidden">Image</div>
@@ -776,9 +778,20 @@
           <div class="card surface">
             <div class="timeline-item">
               <details>
-                <summary>Structural and Functional Insights into Nfr-Mediated Polysaccharide Synthesis in <em>E. coli</em> Biofilms · <span class="summary-date">2025–2026</span></summary>
+                <summary>Modulating HERV-K Transcripts Increases Susceptibility to Chemotherapeutic Drugs in AT/RT Cells · <span class="summary-date">2019</span></summary>
                 <div class="detail-body">
-                  <p>ACS Fall 2025; SACNAS NDiSTEM 2025; InspiraSTEM 2026 (Upcoming)</p>
+                  <p>NIH Summer Poster Day 2019</p>
+                </div>
+              </details>
+              <div class="timeline-media hidden">Image</div>
+            </div>
+          </div>
+          <div class="card surface">
+            <div class="timeline-item">
+              <details>
+                <summary>Ouabain Treatment Reduces HERV-K Transcript Expression via Increased Methylation · <span class="summary-date">2018</span></summary>
+                <div class="detail-body">
+                  <p>NIH Summer Poster Day 2018</p>
                 </div>
               </details>
               <div class="timeline-media hidden">Image</div>
