@@ -135,17 +135,17 @@
 
       .hero-card {
         display: grid;
-        grid-template-columns: 200px 1fr;
+        grid-template-columns: minmax(220px, 280px) 1fr;
         gap: 2rem;
-        align-items: center;
+        align-items: start;
       }
 
       .hero-media img {
         width: 100%;
-        max-width: 200px;
+        max-width: 100%;
         border-radius: var(--radius);
         box-shadow: var(--shadow);
-        border: 3px solid rgba(255, 210, 0, 0.45);
+        border: 3px solid rgba(122, 125, 133, 0.55);
       }
 
       .global-visual {
@@ -272,7 +272,7 @@
 
       .card-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 1rem;
         align-items: start;
       }
@@ -286,6 +286,14 @@
 
       .card {
         border-top: 5px solid var(--umd-red);
+      }
+
+      .card:nth-child(3n + 2) {
+        border-top-color: var(--umd-gold);
+      }
+
+      .card:nth-child(3n) {
+        border-top-color: var(--umd-gray);
       }
 
       .card p {
@@ -312,13 +320,21 @@
 
       .updates-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 1rem;
         align-items: start;
       }
 
       .update {
         border-left: 6px solid var(--umd-gold);
+      }
+
+      .update:nth-child(3n + 1) {
+        border-left-color: var(--umd-red);
+      }
+
+      .update:nth-child(3n) {
+        border-left-color: var(--umd-gray);
       }
 
       .update-label {
@@ -339,7 +355,7 @@
         font-family: "Montserrat", sans-serif;
         font-weight: 900;
         list-style: none;
-        color: #0f1d36;
+        color: #0b172b;
       }
 
       details summary::-webkit-details-marker {
@@ -444,7 +460,7 @@
           grid-template-columns: 1fr;
         }
         .hero-media img {
-          max-width: 160px;
+          max-width: 100%;
         }
         .card-grid,
         .updates-grid {
@@ -501,11 +517,12 @@
             <p class="eyebrow">Research · Mentoring · Advocacy</p>
             <h1>Hi, I’m Saul Flores.</h1>
             <p class="hero-summary">
-              I’m a Biochemistry PhD candidate in the Myles Poulin group at the University of
-              Maryland, College Park. I study exopolysaccharide pathways in bacterial biofilms,
-              integrating structural biology, membrane protein biochemistry, and computation to
-              connect molecular mechanism to emergent biofilm properties. My work also supports
-              academic mentoring and science policy engagement.
+              I’m a Biochemistry PhD candidate in the
+              <a href="https://chem.umd.edu/people/myles-b-poulin" target="_blank" rel="noreferrer">Myles Poulin group</a>
+              at the University of Maryland, College Park, studying exopolysaccharide pathways in
+              bacterial biofilms. I integrate structural biology, membrane protein biochemistry,
+              and computation to connect molecular mechanism to emergent biofilm properties. I’m
+              also engaged in academic mentoring and science policy.
             </p>
 
             <div class="hero-actions">
@@ -531,6 +548,18 @@
         <div class="card-grid">
           <article class="card surface">
             <details>
+              <summary>University of Maryland, College Park · B.S. · <span class="summary-date">Aug. 2018 – May 2022</span></summary>
+              <div class="detail-body">
+                <p>
+                  B.S., Biochemistry and Biological Sciences
+                </p>
+                <p>Ronald E. McNair Summer Research Fellowship · Parmar Family Endowed Scholarship</p>
+              </div>
+            </details>
+          </article>
+
+          <article class="card surface">
+            <details>
               <summary>University of Maryland, College Park · PhD · <span class="summary-date">Aug. 2022 – Present</span></summary>
               <div class="detail-body">
                 <p>
@@ -538,18 +567,6 @@
                 </p>
                 <p>Advanced to candidacy May 2025</p>
                 <p>Ronald E. McNair Graduate Fellowship · UMD Graduate School Society of Fellows</p>
-              </div>
-            </details>
-          </article>
-
-          <article class="card surface">
-            <details>
-              <summary>University of Maryland, College Park · B.S. · <span class="summary-date">Aug. 2018 – May 2022</span></summary>
-              <div class="detail-body">
-                <p>
-                  B.S., Biochemistry and Biological Sciences
-                </p>
-                <p>Ronald E. McNair Summer Research Fellowship · Parmar Family Endowed Scholarship</p>
               </div>
             </details>
           </article>
@@ -567,31 +584,16 @@
         <div class="card-grid">
           <article class="card surface">
             <details>
-              <summary>Graduate Research Assistant · UMD · <span class="summary-date">Aug. 2024 – Present</span></summary>
+              <summary>Research Intern · NIH · <span class="summary-date">Jun. 2018 – Sep. 2019</span></summary>
               <div class="detail-body">
                 <p>
-                  Supervisor: Dr. Myles Poulin · Dept. of Chemistry & Biochemistry
+                  Supervisor: Dr. Avindra Nath · National Institute of Neurological Disorders & Stroke
                 </p>
+                <p>NIH NINDS Exceptional Summer Intern Award (2019)</p>
                 <p class="tag-list">
-                  <span>biofilms</span>
-                  <span>structural biology</span>
-                  <span>membrane enzymes</span>
-                </p>
-              </div>
-            </details>
-          </article>
-
-          <article class="card surface">
-            <details>
-              <summary>Graduate Research Assistant · UMD · <span class="summary-date">Dec. 2022 – Aug. 2024</span></summary>
-              <div class="detail-body">
-                <p>
-                  Supervisor: Dr. Yanxin Liu · Dept. of Chemistry & Biochemistry
-                </p>
-                <p class="tag-list">
-                  <span>biophysical chemistry</span>
-                  <span>protein biochemistry</span>
-                  <span>cryo-EM</span>
+                  <span>neuroscience</span>
+                  <span>transcriptomics</span>
+                  <span>virology</span>
                 </p>
               </div>
             </details>
@@ -615,16 +617,33 @@
 
           <article class="card surface">
             <details>
-              <summary>Research Intern · NIH · <span class="summary-date">Jun. 2018 – Sep. 2019</span></summary>
+              <summary>Graduate Research Assistant · UMD · <span class="summary-date">Dec. 2022 – Aug. 2024</span></summary>
               <div class="detail-body">
                 <p>
-                  Supervisor: Dr. Avindra Nath · National Institute of Neurological Disorders & Stroke
+                  Supervisor: Dr. Yanxin Liu · Dept. of Chemistry & Biochemistry
                 </p>
-                <p>NIH NINDS Exceptional Summer Intern Award (2019)</p>
                 <p class="tag-list">
-                  <span>neuroscience</span>
-                  <span>transcriptomics</span>
-                  <span>virology</span>
+                  <span>biophysical chemistry</span>
+                  <span>protein biochemistry</span>
+                  <span>cryo-EM</span>
+                </p>
+              </div>
+            </details>
+          </article>
+
+          <article class="card surface">
+            <details>
+              <summary>Graduate Research Assistant · UMD · <span class="summary-date">Aug. 2024 – Present</span></summary>
+              <div class="detail-body">
+                <p>
+                  Supervisor:
+                  <a href="https://chem.umd.edu/people/myles-b-poulin" target="_blank" rel="noreferrer">Dr. Myles Poulin</a>
+                  · Dept. of Chemistry & Biochemistry
+                </p>
+                <p class="tag-list">
+                  <span>biofilms</span>
+                  <span>structural biology</span>
+                  <span>membrane enzymes</span>
                 </p>
               </div>
             </details>
@@ -724,20 +743,9 @@
           <div class="card surface">
             <div class="timeline-item">
               <details>
-                <summary>Structural and Functional Insights into Nfr-Mediated Polysaccharide Synthesis in <em>E. coli</em> Biofilms · <span class="summary-date">2025–2026</span></summary>
+                <summary>Ouabain Treatment Reduces HERV-K Transcript Expression via Increased Methylation · <span class="summary-date">2018</span></summary>
                 <div class="detail-body">
-                  <p>ACS Fall 2025; SACNAS NDiSTEM 2025; InspiraSTEM 2026 (Upcoming)</p>
-                </div>
-              </details>
-              <div class="timeline-media hidden">Image</div>
-            </div>
-          </div>
-          <div class="card surface">
-            <div class="timeline-item">
-              <details>
-                <summary>C-H Activation in Iron-Catalyzed Ortho Homoallylation of Aromatic Ketones with Methylenecyclopropanes · <span class="summary-date">2021</span></summary>
-                <div class="detail-body">
-                  <p>McNair Conference 2021; USM LSAMP Research Symposium 2021</p>
+                  <p>NIH Summer Poster Day 2018</p>
                 </div>
               </details>
               <div class="timeline-media hidden">Image</div>
@@ -757,9 +765,20 @@
           <div class="card surface">
             <div class="timeline-item">
               <details>
-                <summary>Ouabain Treatment Reduces HERV-K Transcript Expression via Increased Methylation · <span class="summary-date">2018</span></summary>
+                <summary>C-H Activation in Iron-Catalyzed Ortho Homoallylation of Aromatic Ketones with Methylenecyclopropanes · <span class="summary-date">2021</span></summary>
                 <div class="detail-body">
-                  <p>NIH Summer Poster Day 2018</p>
+                  <p>McNair Conference 2021; USM LSAMP Research Symposium 2021</p>
+                </div>
+              </details>
+              <div class="timeline-media hidden">Image</div>
+            </div>
+          </div>
+          <div class="card surface">
+            <div class="timeline-item">
+              <details>
+                <summary>Structural and Functional Insights into Nfr-Mediated Polysaccharide Synthesis in <em>E. coli</em> Biofilms · <span class="summary-date">2025–2026</span></summary>
+                <div class="detail-body">
+                  <p>ACS Fall 2025; SACNAS NDiSTEM 2025; InspiraSTEM 2026 (Upcoming)</p>
                 </div>
               </details>
               <div class="timeline-media hidden">Image</div>
@@ -789,15 +808,15 @@
         </div>
       </section>
 
-      <section id="contact" class="section">
+      <section id="contact" class="section muted">
         <div class="section-header">
           <h2>Contact</h2>
           <p class="section-subtitle">Let’s connect.</p>
         </div>
 
         <div class="contact-card surface">
-          <p>Location: DC metro area</p>
-          <button class="reveal-button" id="reveal-email" type="button">Reveal email</button>
+          <p>Location: DC-metro area</p>
+          <button class="reveal-button" id="reveal-email" type="button">Click for email</button>
           <p id="email-text" hidden>sflores4[AT]umd.edu</p>
           <p>
             Links:
@@ -812,7 +831,7 @@
         </div>
       </section>
 
-      <section id="links" class="section muted">
+      <section id="links" class="section">
         <div class="section-header">
           <h2>Links I Like</h2>
           <p class="section-subtitle">A growing list of useful tools, labs, and resources.</p>
@@ -822,6 +841,7 @@
           <details>
             <summary>Open link list · <span class="summary-date">Updated 2025</span></summary>
             <div class="detail-body">
+              <p>SNAP · SACNAS · ACS · ASBMB</p>
               <p>Add your favorite links here as you discover them.</p>
             </div>
           </details>
@@ -855,7 +875,7 @@
         const y = blob.y * canvas.height;
         const radius = blob.r * window.devicePixelRatio;
         const gradient = ctx.createRadialGradient(x, y, radius * 0.2, x, y, radius);
-        gradient.addColorStop(0, `hsla(${blob.hue}, 70%, 60%, 0.18)`);
+        gradient.addColorStop(0, `hsla(${blob.hue}, 70%, 60%, 0.12)`);
         gradient.addColorStop(1, `hsla(${blob.hue}, 70%, 40%, 0)`);
         ctx.fillStyle = gradient;
         ctx.beginPath();
@@ -889,7 +909,7 @@
       if (revealButton && emailText) {
         revealButton.addEventListener("click", () => {
           emailText.hidden = !emailText.hidden;
-          revealButton.textContent = emailText.hidden ? "Reveal email" : "Hide email";
+          revealButton.textContent = emailText.hidden ? "Click for email" : "Hide email";
         });
       }
     </script>
