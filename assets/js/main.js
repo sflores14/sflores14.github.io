@@ -9,35 +9,18 @@
   function setHeaderOffset() {
     const header = document.querySelector(".site-header");
     if (!header) return;
-    const px = Math.round(header.getBoundingClientRect().height + 14);
-    document.documentElement.style.setProperty("--header-offset", px + "px");
+    const px = Math.round(header.getBoundingClientRect().height + 18);
+    document.documentElement.style.setProperty("--header-offset", `${px}px`);
   }
 
   function initEmailReveal() {
-    const revealButton = document.getElementById("reveal-email");
-    const emailText = document.getElementById("email-text");
     const emailLink = document.getElementById("email-link");
-
-    if (emailLink) {
-      const user = "sflores4";
-      const domain = "umd.edu";
-      const addr = `${user}@${domain}`;
-      emailLink.textContent = addr;
-      emailLink.href = `mailto:${addr}`;
-    }
-
-    if (revealButton && emailText) {
-      revealButton.addEventListener("click", () => {
-        const hidden = emailText.hasAttribute("hidden");
-        if (hidden) {
-          emailText.removeAttribute("hidden");
-          revealButton.textContent = "Hide email";
-        } else {
-          emailText.setAttribute("hidden", "");
-          revealButton.textContent = "Click for email";
-        }
-      });
-    }
+    if (!emailLink) return;
+    const user = "sflores4";
+    const domain = "umd.edu";
+    const addr = `${user}@${domain}`;
+    emailLink.textContent = addr;
+    emailLink.href = `mailto:${addr}`;
   }
 
   function initCanvas() {
@@ -86,14 +69,17 @@
     }
 
     window.addEventListener("resize", resizeCanvas, { passive: true });
-    window.addEventListener("mousemove", (event) => {
-      mouseX = event.clientX / window.innerWidth;
-      mouseY = event.clientY / window.innerHeight;
-    }, { passive: true });
+    window.addEventListener(
+      "mousemove",
+      (event) => {
+        mouseX = event.clientX / window.innerWidth;
+        mouseY = event.clientY / window.innerHeight;
+      },
+      { passive: true }
+    );
 
     resizeCanvas();
 
-    // Respect reduced-motion: draw one frame only
     if (prefersReducedMotion) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       blobs.forEach(drawBlob);
